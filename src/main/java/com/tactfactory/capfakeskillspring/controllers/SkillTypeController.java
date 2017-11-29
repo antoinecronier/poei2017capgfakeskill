@@ -1,6 +1,7 @@
 package com.tactfactory.capfakeskillspring.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tactfactory.capfakeskillspring.controllers.base.BaseController;
@@ -16,7 +17,7 @@ public class SkillTypeController extends BaseController<SkillType> {
 		super(SkillType.class);
 	}
 
-	@RequestMapping("/send")
+	@GetMapping("/send")
 	public String sendSkillType(){
 		return "coucou";
 	}

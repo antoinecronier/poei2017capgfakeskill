@@ -6,23 +6,16 @@ import javax.persistence.Table;
 
 import com.tactfactory.capfakeskillspring.models.base.BaseEntity;
 
-@Table(name="user")
 public class User extends BaseEntity {
 
-	@Column(name="lastname")
 	private String lastname;
 
-	@Column(name="firstname")
 	private String firstname;
 
-	@Column(name="email")
 	private String email;
 
-	@Column(name="password")
 	private String password;
 
-	@OneToMany(targetEntity=CarrerManager.class,mappedBy="collaborators")
-	@Column(name="id_carrer_manager")
 	private User carrer_manager;
 
 	public User getCarrer_manager() {

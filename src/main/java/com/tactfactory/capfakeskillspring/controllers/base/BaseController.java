@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.tactfactory.capfakeskillspring.dao.interfaces.base.IBaseDAO;
+import com.tactfactory.capfakeskillspring.managers.interfaces.base.IBaseManager;
 import com.tactfactory.capfakeskillspring.models.base.BaseEntity;
 
 public abstract class BaseController <T extends BaseEntity> {
@@ -32,7 +33,7 @@ public abstract class BaseController <T extends BaseEntity> {
 	public final static String ROUTE_LIST = LIST_ACTION;
 
 	@Autowired
-	private IBaseDAO<T> baseCrud;
+	private IBaseManager<T> baseCrud;
 
 	private Class<T> clazz;
 
