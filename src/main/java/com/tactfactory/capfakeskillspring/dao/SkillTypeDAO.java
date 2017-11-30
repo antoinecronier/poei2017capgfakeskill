@@ -6,8 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tactfactory.capfakeskillspring.dao.base.BaseDAO;
 import com.tactfactory.capfakeskillspring.dao.interfaces.ISkillTypeDAO;
-import com.tactfactory.capfakeskillspring.dao.interfaces.ISkillTypeDAO;
-import com.tactfactory.capfakeskillspring.models.SkillType;
 import com.tactfactory.capfakeskillspring.models.SkillType;
 
 @Transactional
@@ -23,9 +21,10 @@ public class SkillTypeDAO extends BaseDAO<SkillType> implements ISkillTypeDAO {
 		entityManager.detach(item);
 	}
 
-	@Override
-	public List getAll() {
-		return null;
+	@SuppressWarnings("unchecked")
+    @Override
+	public List<SkillType> getAll() {
+		return entityManager.createQuery("SELECT st FROM SkillType st").getResultList();
 	}
 
 	@Override

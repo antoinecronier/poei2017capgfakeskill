@@ -10,13 +10,19 @@ public class BaseEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Double id;
+	private Integer id;
 
-	public Double getId() {
+	public BaseEntity() {
+    }
+	public BaseEntity(Integer id) {
+        this.setId(id);
+    }
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Double id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

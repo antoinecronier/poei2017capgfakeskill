@@ -26,7 +26,7 @@ public abstract class BaseManager<T extends BaseEntity> implements IBaseManager<
 	}
 
 	@Override
-	public List getAll() {
+	public List<T> getAll() {
 		return dao.getAll();
 	}
 

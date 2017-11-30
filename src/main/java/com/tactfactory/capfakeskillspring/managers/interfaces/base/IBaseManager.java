@@ -9,7 +9,7 @@ public interface IBaseManager<T extends BaseEntity> {
 
 	public void delete(T item);
 
-	public List getAll();
+	public List<T> getAll();
 
 	public T getById(Integer id);
 
