@@ -1,4 +1,4 @@
-package com.tactfactory.capfakeskillspring.controllers;
+package com.tactfactory.capfakeskillspring.controllers.views;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

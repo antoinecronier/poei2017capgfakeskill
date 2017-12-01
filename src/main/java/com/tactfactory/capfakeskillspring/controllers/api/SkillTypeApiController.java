@@ -1,4 +1,4 @@
-package com.tactfactory.capfakeskillspring.controllers;
+package com.tactfactory.capfakeskillspring.controllers.api;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,6 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tactfactory.capfakeskillspring.managers.interfaces.base.IBaseManager;
 import com.tactfactory.capfakeskillspring.models.SkillType;
 
+/**
+ * Use next curl request to retreive datas on API mode
+ * curl admin:admin@127.0.0.1:1213/skill_types/
+ * @author tactfactory
+ *
+ */
 @RestController
 @RequestMapping("/skill_types")
 public class SkillTypeApiController {
@@ -22,7 +28,7 @@ public class SkillTypeApiController {
     @Autowired
     private IBaseManager<SkillType> manager;
 
-    @RequestMapping(value="/", method=RequestMethod.GET)
+    @RequestMapping(value={"/",""}, method=RequestMethod.GET)
     public List<SkillType> getAll() {
         return this.manager.getAll();
     }
@@ -75,15 +81,5 @@ public class SkillTypeApiController {
         }
 
         return entity;
-    }
-
-    @RequestMapping(value="/fill", method=RequestMethod.POST)
-    public List<SkillType> fill() {
-        for (String name : Arrays.asList("Soft", "Technical", "Super", "Mega", "Ultra")) {
-            SkillType type = new SkillType(name);
-            this.manager.create(type);
-        }
-
-        return this.getAll();
     }
 }

@@ -45,7 +45,8 @@ public class DatabaseConfig {
 		entityManagerFactory.setDataSource(dataSource);
 
 		entityManagerFactory.setPackagesToScan(env
-				.getProperty("entitymanager.packagesToScan"));
+				.getProperty("entitymanager.packagesToScan"),
+				env.getProperty("entitymanager.security.packagesToScan"));
 
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		entityManagerFactory.setJpaVendorAdapter(vendorAdapter);
