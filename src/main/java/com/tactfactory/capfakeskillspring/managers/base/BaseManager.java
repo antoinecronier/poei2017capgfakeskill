@@ -39,4 +39,9 @@ public abstract class BaseManager<T extends BaseEntity> implements IBaseManager<
 	public void update(T item) {
 		dao.update(item);
 	}
+
+	@Override
+	public void delete(Long id) {
+		dao.delete(id);
+	}
 }

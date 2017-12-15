@@ -217,10 +217,14 @@ public class DumpFields {
 	}
 
 	public static <T> ArrayList<Map<String, Object>> listFielder(List<T> items) {
-		ArrayList<Map<String, Object>> listMap = new ArrayList<Map<String, Object>>();
-		for (T item : items) {
-			listMap.add(DumpFields.fielder(item));
+		ArrayList<Map<String, Object>> listMap = new ArrayList<Map<String,Object>>();
+		if (items != null) {
+			listMap = new ArrayList<Map<String, Object>>();
+			for (T item : items) {
+				listMap.add(DumpFields.fielder(item));
+			}
 		}
+
 		return listMap;
 	}
 
@@ -257,7 +261,9 @@ public class DumpFields {
 					if (field.getValue() == "") {
 						Object value = null;
 						for (Field realField : realFields) {
-							if (realField.getName().equals(field.getKey())) {
+							System.out.println(realField.getDeclaringClass());
+							System.out.println(klazz);
+							if (realField.getName().equals(field.getKey()) && !realField.getDeclaringClass().equals(klazz)) {
 								value = DumpFields
 										.createContentsEmpty(realField
 												.getType());

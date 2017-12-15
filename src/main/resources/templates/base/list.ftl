@@ -38,6 +38,9 @@
                 <td>
                     <form action="${item["id"]}/delete" method="POST">
                         <input type="hidden" name="id" value="${item["id"]}">
+                        <input type="hidden"
+				            name="${_csrf.parameterName}"
+				            value="${_csrf.token}"/>
                         <input type="submit" value="delete"/>
                     </form>
                 </td>

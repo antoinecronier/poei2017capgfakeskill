@@ -1,11 +1,17 @@
 package com.tactfactory.capfakeskillspring.models;
 
-import javax.persistence.Column;
-import javax.persistence.OneToMany;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import com.tactfactory.capfakeskillspring.models.base.BaseEntity;
 
+@Entity
+@Table(
+    name = "user",
+    uniqueConstraints=@UniqueConstraint(columnNames="email")
+)
 public class User extends BaseEntity {
 
 	private String lastname;
@@ -16,6 +22,7 @@ public class User extends BaseEntity {
 
 	private String password;
 
+	@ManyToOne
 	private User carrer_manager;
 
 	public User getCarrer_manager() {

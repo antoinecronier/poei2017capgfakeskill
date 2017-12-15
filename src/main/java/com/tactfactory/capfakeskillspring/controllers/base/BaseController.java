@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.tactfactory.capfakeskillspring.dao.interfaces.base.IBaseDAO;
 import com.tactfactory.capfakeskillspring.managers.interfaces.base.IBaseManager;
@@ -65,6 +66,15 @@ public abstract class BaseController <T extends BaseEntity> {
 	public String deleteItem(@ModelAttribute T item){
 		try {
 			baseCrud.delete(item);
+		} catch (Exception e) {
+			return "Delete failed";
+		}
+		return "Delete OK";
+	}
+
+	public String deleteItem(@PathVariable Long id){
+		try {
+			baseCrud.delete(id);
 		} catch (Exception e) {
 			return "Delete failed";
 		}

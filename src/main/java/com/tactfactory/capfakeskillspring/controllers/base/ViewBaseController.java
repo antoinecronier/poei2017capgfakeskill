@@ -117,8 +117,8 @@ public class ViewBaseController<T extends BaseEntity> extends BaseController<T> 
 	}
 
 	@RequestMapping(path = ROUTE_DELETE, method = RequestMethod.POST)
-	public String deleteItemPost(@PathVariable T item) {
-		super.deleteItem(item);
+	public String deleteItemPost(@PathVariable Long id) {
+		super.deleteItem(id);
 		return deleteRedirect;
 	}
 }

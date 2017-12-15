@@ -4,16 +4,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tactfactory.capfakeskillspring.controllers.base.ViewBaseController;
-import com.tactfactory.capfakeskillspring.models.SkillType;
+import com.tactfactory.capfakeskillspring.models.User;
 
 @Controller
-@RequestMapping(SkillTypeViewController.BASE_URL)
-public class SkillTypeViewController extends ViewBaseController<SkillType> {
+@RequestMapping(UserViewController.BASE_URL)
+public class UserViewController extends ViewBaseController<User> {
 
-	public static final String BASE_URL = "/admin/skilltype";
+	public static final String BASE_URL = "/admin/user";
 
-	public final static String ROUTE_BASE = "skilltype";
-	public final static String ROUTE_REDIRECT = "admin/skilltype";
+	public final static String ROUTE_BASE = "user";
+	public final static String ROUTE_REDIRECT = "admin/user";
 	public final static String PATH_BASE = "base";
 
 	public final static String index = "";
@@ -22,8 +22,8 @@ public class SkillTypeViewController extends ViewBaseController<SkillType> {
 
 	protected final static String ROUTE_INDEX = index;
 
-	protected SkillTypeViewController() {
-		super(SkillType.class, BASE_URL);
+	protected UserViewController() {
+		super(User.class, BASE_URL);
 
 		this.basePage = index;
 		this.createRedirect = REDIRECT + this.basePath + PATH + ROUTE_INDEX;

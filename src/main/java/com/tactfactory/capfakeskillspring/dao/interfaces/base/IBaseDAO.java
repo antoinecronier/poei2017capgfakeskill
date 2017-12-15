@@ -12,6 +12,8 @@ public abstract interface IBaseDAO<T extends BaseEntity> {
 
 	public void delete(T item);
 
+	public void delete(Long id);
+
 	public List<T> getAll();
 
 	public T getById(Long id);
