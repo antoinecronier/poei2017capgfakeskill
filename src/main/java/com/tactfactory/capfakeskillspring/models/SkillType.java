@@ -27,7 +27,7 @@ public class SkillType extends BaseEntity {
     public SkillType(String name) {
         this.setName(name);
     }
-    public SkillType(Integer id, String name) {
+    public SkillType(Long id, String name) {
         super(id);
         this.setName(name);
     }

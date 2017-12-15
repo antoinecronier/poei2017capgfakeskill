@@ -28,7 +28,7 @@ public class SkillDAO extends BaseDAO<Skill> implements ISkillDAO {
 	}
 
 	@Override
-	public Skill getById(Integer id) {
+	public Skill getById(Long id) {
 		return entityManager.find(Skill.class, id);
 	}
 

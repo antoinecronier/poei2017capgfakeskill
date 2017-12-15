@@ -71,7 +71,7 @@ public abstract class BaseController <T extends BaseEntity> {
 		return "Delete OK";
 	}
 
-	public T getItem(Integer id){
+	public T getItem(Long id){
 		T item = null;
 		item = baseCrud.getById(id);
 		return item;

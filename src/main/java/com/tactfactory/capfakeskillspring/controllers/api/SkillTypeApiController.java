@@ -34,7 +34,7 @@ public class SkillTypeApiController {
     }
 
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
-    public SkillType get(@PathVariable Integer id, HttpServletResponse response) {
+    public SkillType get(@PathVariable Long id, HttpServletResponse response) {
         SkillType entity = this.manager.getById(id);
 
         if (entity == null) {
@@ -45,7 +45,7 @@ public class SkillTypeApiController {
     }
 
     @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
-    public SkillType delete(@PathVariable Integer id) {
+    public SkillType delete(@PathVariable Long id) {
         SkillType type = this.manager.getById(id);
 
         if (type != null) {
@@ -67,7 +67,7 @@ public class SkillTypeApiController {
     }
 
     @RequestMapping(value="/{id}", method=RequestMethod.PUT)
-    public SkillType update(HttpServletResponse response, @PathVariable int id, @RequestParam String name) {
+    public SkillType update(HttpServletResponse response, @PathVariable Long id, @RequestParam String name) {
         SkillType entity = this.manager.getById(id);
 
         if (entity == null) {

@@ -31,7 +31,7 @@ public abstract class BaseManager<T extends BaseEntity> implements IBaseManager<
 	}
 
 	@Override
-	public T getById(Integer id) {
+	public T getById(Long id) {
 		return dao.getById(id);
 	}
 

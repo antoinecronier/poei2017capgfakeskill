@@ -11,7 +11,7 @@ public interface IBaseManager<T extends BaseEntity> {
 
 	public List<T> getAll();
 
-	public T getById(Integer id);
+	public T getById(Long id);
 
 	public void update(T item);
 }

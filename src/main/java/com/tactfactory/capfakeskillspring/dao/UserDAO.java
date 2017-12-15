@@ -27,7 +27,7 @@ public class UserDAO extends BaseDAO<User> implements IUserDAO {
 	}
 
 	@Override
-	public User getById(Integer id) {
+	public User getById(Long id) {
 		return entityManager.find(User.class, id);
 	}
 

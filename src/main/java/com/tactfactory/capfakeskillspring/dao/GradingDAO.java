@@ -28,7 +28,7 @@ public class GradingDAO extends BaseDAO<Grading> implements IGradingDAO {
 	}
 
 	@Override
-	public Grading getById(Integer id) {
+	public Grading getById(Long id) {
 		return entityManager.find(Grading.class, id);
 	}
 

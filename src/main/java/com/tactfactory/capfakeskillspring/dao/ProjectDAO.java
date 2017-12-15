@@ -28,7 +28,7 @@ public class ProjectDAO extends BaseDAO<Project> implements IProjectDAO {
 	}
 
 	@Override
-	public Project getById(Integer id) {
+	public Project getById(Long id) {
 		return entityManager.find(Project.class, id);
 	}
 
